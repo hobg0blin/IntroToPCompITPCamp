@@ -26,16 +26,16 @@ With our handy multimeters, of course!
 
 Let’s set up a simple power supply using our Arduinos. For this section of the course, we’ll be treating our Arduinos exclusively as a power supply, so don’t worry about the complexities of microcontrollers or having to write code. We’ll get to (very basic) information on that in the next section.
 
-![cables plugged into an arduino power and ground](assets/power_ground.HEIC)
+![cables plugged into an arduino power and ground](assets/power_ground.jpg)
 Plug a black wire into the hole on your Arduino that says `GND`, and a red wire into the hole above it that says `5V`. Let’s do a test measurement to make sure our Arduinos are working correctly.
 
 If you have alligator clips, clip them between the red and black wires on the Arduino and the red and black wires on the multimeter. The black wire to the multimeter should be plugged into the COM port, and the red wire should be plugged into the port on the right - the other port is for super high current measurements, which we won’t be doing today.
 
-![a multimeter showing 5.13 volts](assets/multimeter_arduino_voltage.HEIC)
+![a multimeter showing 5.13 volts](assets/multimeter_arduino_voltage.jpg)
 
 First, turn your multimeter to the “V” symbol. We should get an output around 5 volts, since we’re attached to the 5V port.
 
-![a multimeter showing 0.123 amps](assets/multimeter_arduino_current.HEIC)
+![a multimeter showing 0.123 amps](assets/multimeter_arduino_current.jpg)
 
 Now, turn your multimeter to the “A” symbol. We should get an output around .125 amps.
 
@@ -53,7 +53,7 @@ Basically, a breadboard is a device designed to help prototype circuits without 
  ![a diagram of power flow in a breadboard](assets/breadboard.jpg)
 The two large pieces of wire are usually called **power rails**: this is where we usually connect our power source to the breadboards. The smaller pieces are used to connect components to the power supply.
 
-![a breadboard with its left power and ground rails connected to an arduino](assets/breadboard_power.HEIC)
+![a breadboard with its left power and ground rails connected to an arduino](assets/breadboard_power.jpg)
 
 Let’s connect the ground wire (the black wire connected to GND on the Arduino) to one of the blue rails on the side of our breadboard, then connect power (the red wire connected to 5V).
 
@@ -67,12 +67,12 @@ Let’s connect the ground wire (the black wire connected to GND on the Arduino)
 #### What’s an LED?
 
 An LED is a type of diode: a component that is **polarized**: this means it allows the flow of electricity in one direction, and blocks it in the other.
-![a picture of an LED](assets/led.HEIC)
+![a picture of an LED](assets/led.jpg)
 An **LED** (light-emitting diode) is a special type of diode that emits light when current flows through it: with LEDs, you can generally tell which side current flows through by the length of its legs: the longer leg is the one the power should enter, and the shorter is the one it should leave.
 
 An LED is one of the simplest and most common types of **actuators**: the components that turn our electrical energy into some other form of energy. In this case, it’s turning it into light.
 
-![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.HEIC)
+![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.jpg)
 Now that we know how current flows through an LED, and through a breadboard, let’s try making the simplest circuit possible: put the short leg of your LED into the blue rail on your breadboard (remember to always ground your component first!), then the long leg into the red rail.
 
 If we did this right, congrats! You just burned out your first LED. Why did this happen?
@@ -100,10 +100,44 @@ If we’ve wired this correctly, our LED should light up without burning out.
 Now, we’re going to add a pushbutton to our circuit. Pushbuttons (and switches, through lever action) are components that bring two pieces of metal together through pushing down. In the context of a circuit, this means if we run our current through a pushbutton, we can interrupt or restore it.
 
 Basically, we want to run our power supply through one side of the pushbutton, then continue it on to the LED on the other side.
+![a pushbutton wired to the previous circuit](assets/button.jpg)
+
+If we’ve wired this correctly, we should be able to turn our LED on and off.
+
 ![a pushbutton being pressed down and lighting up an LED on a breadboard](assets/pushbutton.gif)
 
 
 ### Adding a potentiometer
 
-Now, let’s add a potentiometer: this is a type of *variable resistor*. Variable resistors allow you to change their resistance as the current flows through them, in this case by turning a dial.
+![a diagram of the inside of a potentiometer](assets/pot_diagram.jpg)
+
+Now, let’s take switchout our push button and add a potentiometer: this is a type of *variable resistor*. Variable resistors allow you to change their resistance as the current flows through them, in this case by turning a dial.
+
+To do this correctly (at least on the potentiometers available in the ITP shop), we need to wire it so that it is attached to Ground, Power, and an output to our LED.
+
+![a diagram of a potentiometer with three pins: from left to right, ground, output, and power](assets/pot_diagram_exterior.jpg)
+
+Let’s plug it into our breadboard, and wire it according to the diagram.
+
+
+![an image of a potentiometer wired into the circuit](assets/pot_led_on.jpg)
+
+
+If this is wired correctly, we should be able to adjust the brightness of our LED!
+
+![a gif of a light being dimmed and brightened](assets/pot_vid.gif)
+
+
+### Capacitors
+
+![a picture of a 2200 microfarad capacitor](assets/capacitor.jpg)
+**Capacitors**: these store energy while it’s coming in, and then release it when incoming energy stops. These are super useful for making sure something that requires a very specific electrical supply receives it, as many power supplies tend to have dips and spikes in their current.
+
+
+There’s not a great use for a capacitor in this circuit, but we’ll demo how it might be used here.
+
+
+For more components, and their uses, you can check out [ITP’s components lab](https://itp.nyu.edu/physcomp/labs/labs-electronics/components/).
+
+
 
