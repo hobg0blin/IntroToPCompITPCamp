@@ -1,7 +1,16 @@
 # Intro To Physical Computing With Arduino
 ### James Hosken and Brent Bailey
+### Heavily indebted to [ITP’s Physical Computing Syllabus](https://www.youtube.com/watch?v=Ny8-G8EoWOw)
 
-## What’s Physical Computing All About?
+## What’s The Deal With Physical Computing?
+
+Pretty much any electronic interface you can think of involves physical computing. Computers? Physical computing (sometimes). [The clapper?](https://www.youtube.com/watch?v=Ny8-G8EoWOw) Physical computing. But physical computing is a specific school of thought around interface design.
+
+Physical computing is the design of interfaces that take the human body as a starting point, instead of starting from the hardware and form restrictions of a computer alone.
+
+Physical computing involves a lot of hands-on work: making circuits, incorporating components, fabricating structures, and writing the code to make it all work.
+
+In the context of this brief introduction, we’ll be covering some basic concepts in electronics, and explaining some basic theory and practice behind using microcontrollers on the electronic circuits we build. We’ll be building an extremely simple circuit, but taking as much time as possible to understand what’s actually happening. This is a chance to dip your toe into the deep, deep waters of physical computing: if you fall in love with it, there’s a lifetime’s worth of things to do and learn.
 
 ## Basics of Electricity: voltage, current, and resistance
 
@@ -140,4 +149,8 @@ There’s not a great use for a capacitor in this circuit, but we’ll demo how 
 For more components, and their uses, you can check out [ITP’s components lab](https://itp.nyu.edu/physcomp/labs/labs-electronics/components/).
 
 
+### More Useful Stuff
 
+[The ITP Physical Computing Syllabus](https://itp.nyu.edu/physcomp/) - this has every lab, resource, and video taught in ITP’s required Physical Computing Course.
+
+[Practical Electronics for Inventors](https://itp.nyu.edu/physcomp/) - a super useful book if you want to get deeper into electronics and circuit building. Usually taught at ITP under a variety of names.
