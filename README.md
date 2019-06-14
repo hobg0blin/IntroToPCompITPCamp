@@ -54,7 +54,7 @@ Now, turn your multimeter to the “A” symbol. We should get an output around 
 
 You can plug your multimeter in at just about any point in a circuit (making sure to put your power cable closer to the power source) to determine the voltage and current available at those points. This is an easy way to debug why something might not be working: if it’s not getting any voltage or current, that’s probably why!
 
-**SIDE NOTE:** *This is the simplest form of measurement; measuring across an open power supply. When you measure different sections of your circuit the processes for measuring voltage and current are slightly different, so be sure to familiarise yourself with the differences below.*
+**SIDE NOTE:** *This is the simplest form of measurement; measuring across an open power supply. When you measure different sections of your circuit the processes for measuring voltage and current are slightly different, so be sure to familiarise yourself with the differences below. In general, voltage is measured across a component and current is measured before a component.*
 
 To get more familiar with a multimeter and some of the rules around electronics, you can check out [ITP’s Electronics Lab](https://itp.nyu.edu/physcomp/labs/labs-electronics/electronics/).
 
@@ -127,9 +127,11 @@ If we’ve wired this correctly, we should be able to turn our LED on and off.
 
 ![a diagram of the inside of a potentiometer](assets/pot_diagram.jpg)
 
-Now, let’s take switchout our push button and add a potentiometer: this is a type of *variable resistor*. Variable resistors allow you to change their resistance as the current flows through them, in this case by turning a dial.
+Now, let’s take switch out of our push button and add a potentiometer: this is a type of *variable resistor*. Variable resistors allow you to change their resistance as the current flows through them, in this case by turning a dial.
 
 To do this correctly (at least on the potentiometers available in the ITP shop), we need to wire it so that it is attached to Ground, Power, and an output to our LED.
+
+**SIDE NOTE:** *Why ground? Remember that ground is a reference for voltage. When we start using the Arduino later it's important to have this ground reference to get the correct sensor readings. This is outside the scope of this workshop so for now consider it a convention!*
 
 ![a diagram of a potentiometer with three pins: from left to right, ground, output, and power](assets/pot_diagram_exterior.jpg)
 
