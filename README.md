@@ -3,7 +3,7 @@
 ### Heavily indebted to [ITP’s Physical Computing Syllabus](https://itp.nyu.edu/physcomp/)
 
 ## What’s The Deal With Physical Computing?
-![A gif of a mirror made out of wood](assets/wooden-mirror.gif)
+![A gif of a mirror made out of wood](assets/Wooden-Mirror.gif)
 
 Pretty much any electronic interface you can think of involves physical computing. Computers? Physical computing (sometimes). [The clapper?](https://www.youtube.com/watch?v=Ny8-G8EoWOw) Physical computing. But physical computing is a specific school of thought around interface design.
 
