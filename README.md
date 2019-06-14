@@ -66,6 +66,8 @@ Now, let’s break out our breadboards.
 
 Basically, a breadboard is a device designed to help prototype circuits without needing to solder. They come in different shapes and sizes, but in general, they consist of two large pieces of wire running down each side, and then a bunch of smaller pieces of wire running perpendicularly along.
  ![a diagram of power flow in a breadboard](assets/breadboard.jpg)
+
+
 The two large pieces of wire are usually called **power rails**: this is where we usually connect our power source to the breadboards. The smaller pieces are used to connect components to the power supply.
 
 **Side note:** The letters on numbers on some breadboards don’t actually mean anything! They can be useful if you want to clearly diagram out locations for different components, but in general all you need to worry about is that the flow of current on the power rails is vertical and on the component pieces is horizontal, and make sure your circuit keeps current flowing through it at every point.
@@ -103,7 +105,8 @@ To make sure our LED gets the right current, we’ll add a component called a **
 
 ![a chart for calculating resistance value by color](assets/resistor-color-chart.png)
 
-**SIDE NOTE:** *If you forget the resistor codes or don't have internet to check the handy chart, you can [use your multimeter to measure resistance](https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/measuring-resistance) as well!*
+**SIDE NOTE:** *If you forget the resistor codes or don't have internet to check the handy chart, you can [use your multimeter to measure resistance](https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/measuring-resistance) as well! For example, here’s me measuring a 220 ohm resistor: *
+![a multimeter measuring a resistor that reads 217.5 ohms](assets/resistor_current.jpg)
 
 For most LEDs, a resistor between 220 and 1K ohms will do the job, so we’ll use a 220 ohm resistor for maximum brightness (to decrease brightness, we can use a higher-ohm resistor).
 
