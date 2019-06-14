@@ -218,10 +218,12 @@ So far we've only used the Arduino as a power source, we have not accessed its u
 - **Power:** 5V board
 	- USB or 7-15V 
 	- 40mA *per pin*, 500 mA *max* | **Don't fry your board!**
-- **Pins:** Digital vs Analog.
-	- Digital 	(Read or Write 5V)
-	- Analog	(Read 0V - 5V, Write 5V)
-	- **PWM (~):** A way to fake analog;
+- **Pins:** 
+	- 5V & GND
+	- Digital vs Analog.
+		- Digital 	(Read or Write 5V)
+		- Analog	(Read 0V - 5V, Write 5V)
+		- **PWM (~):** A way to fake analog;
 
 #### A Note On Power
 The Arduino max rating is 40mA per pin, so what if you want to control a motor that draws 200mA? or 500mA? Controlling high current loads is outside the scope of this workshop, but there are many ways to do it. Below are some of the common ways if you'd like to delve deeper. 
