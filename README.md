@@ -96,6 +96,8 @@ Now that we know how current flows through an LED, and through a breadboard, let
 
 ![a fritzing diagram of an LED plugged into the power rails on a breadboard](assets/kill_led_bb.jpg)
 
+**Side note:** This is called a fritzing diagram. They’re super useful and way less confusing than traditional circuit diagrams: you can make your own using [the fritzing app](http://fritzing.org/download/).
+
 ![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.jpg)
 
 
