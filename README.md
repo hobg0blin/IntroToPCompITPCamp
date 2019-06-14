@@ -1,6 +1,6 @@
 # Intro To Physical Computing With Arduino
 ### James Hosken and Brent Bailey
-### Heavily indebted to [ITP’s Physical Computing Syllabus](https://www.youtube.com/watch?v=Ny8-G8EoWOw)
+### Heavily indebted to [ITP’s Physical Computing Syllabus](https://itp.nyu.edu/physcomp/)
 
 ## What’s The Deal With Physical Computing?
 
@@ -17,10 +17,10 @@ In the context of this brief introduction, we’ll be covering some basic concep
 **Electricity** is the flow of electrical energy through conductive materials. Electrical circuits - the basic objects you’re working with in any form of physical computing - are the combination of a power source, which provides electricity, and components that convert that energy into other forms, like visual output on a screen, or a motor turning.
 
 - **Voltage** is a measure of the difference in electrical potential energy between two points in a circuit-  we can think of it as kind of a measure of the raw energy available. It’s measured in Volts.
-	- An important thing for us to remember is that the voltage across our circuit is determined by the power supply (e.g. an Arduino provides 5V). We need to use components that can handle that.
+  - An important thing for us to remember is that the voltage across our circuit is determined by the power supply (e.g. an Arduino provides 5V). We need to use components that can handle that.
 
-- **Current** is a measure of the rate at which electrical energy is flowing. It’s measured in Amperes, or Amps. 
-	- An important thing for us to remember is that components will try to *draw* as much current as they can, and different power supplies can deliver only so much current. Bigger current components require bigger power supplies.
+- **Current** is a measure of the rate at which electrical energy is flowing. It’s measured in Amperes, or Amps.
+  - An important thing for us to remember is that components will try to *draw* as much current as they can, and different power supplies can deliver only so much current. Bigger current components require bigger power supplies.
 
 - **Resistance** is a measure of a material’s ability to resist the flow of current. It’s measured in Ohms. Every object has some degree of resistance, but when we’re building circuits, we generally use materials that are super-low resistance, like copper wire, to carry the current through it.
 
@@ -68,6 +68,8 @@ Basically, a breadboard is a device designed to help prototype circuits without 
  ![a diagram of power flow in a breadboard](assets/breadboard.jpg)
 The two large pieces of wire are usually called **power rails**: this is where we usually connect our power source to the breadboards. The smaller pieces are used to connect components to the power supply.
 
+**Side note:** The letters on numbers on some breadboards don’t actually mean anything! They can be useful if you want to clearly diagram out locations for different components, but in general all you need to worry about is that the flow of current on the power rails is vertical and on the component pieces is horizontal, and make sure your circuit keeps current flowing through it at every point.
+
 ![a breadboard with its left power and ground rails connected to an arduino](assets/breadboard_power.jpg)
 
 Let’s connect the ground wire (the black wire connected to GND on the Arduino) to one of the blue rails on the side of our breadboard, then connect power (the red wire connected to 5V).
@@ -83,9 +85,10 @@ An LED is a type of diode: a component that is **polarized**: this means it allo
 An **LED** (light-emitting diode) is a special type of diode that emits light when current flows through it: with LEDs, you can generally tell which side current flows through by the length of its legs: the longer leg is the one the power should enter, and the shorter is the one it should leave.
 
 **SIDE NOTE:** If your LED has equal sized legs, look for a flat section on the rim. That side should point to ground.
-![LED polarity showing short leg as the cathode](assets/led-polarity.png) 
+![LED polarity showing short leg as the cathode](assets/led-polarity.png)
 
 An LED is one of the simplest and most common types of **actuators**: the components that turn our electrical energy into some other form of energy. In this case, it’s turning it into light.
+![a fritzing diagram of an LED plugged into the power rails on a breadboard](assets/kill_led_bb.jpg)
 
 ![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.jpg)
 Now that we know how current flows through an LED, and through a breadboard, let’s try making the simplest circuit possible: put the short leg of your LED into the blue rail on your breadboard (remember to always ground your component first!), then the long leg into the red rail.
@@ -106,6 +109,8 @@ For most LEDs, a resistor between 220 and 1K ohms will do the job, so we’ll us
 
 Basically, we want to put our resistor (in either direction - resistors aren’t polarized) in between our power supply and our LED. Since it’s a best practice to keep components on the horizontal rows on the breadboard, we’ll add red and black wires going from our power rails onto separate rows. We’ll need to get a new LED since we burned out our old one.
 
+![a fritzing diagram of an led correctly wired with a resistor](assets/led_resistor.jpg)
+
 ![an LED wired into a breadboard with a 220 ohm resistor](assets/resistor_220.jpg)
 
 If we’ve wired this correctly, our LED should light up without burning out.
@@ -116,6 +121,7 @@ If we’ve wired this correctly, our LED should light up without burning out.
 Now, we’re going to add a pushbutton to our circuit. Pushbuttons (and switches, through lever action) are components that bring two pieces of metal together through pushing down. In the context of a circuit, this means if we run our current through a pushbutton, we can interrupt or restore it.
 
 Basically, we want to run our power supply through one side of the pushbutton, then continue it on to the LED on the other side.
+![a fritzing diagram of the previous circuit with a pushbutton added](assets/pushbutton.jpg)
 ![a pushbutton wired to the previous circuit](assets/button.jpg)
 
 If we’ve wired this correctly, we should be able to turn our LED on and off.
@@ -137,6 +143,7 @@ To do this correctly (at least on the potentiometers available in the ITP shop),
 
 Let’s plug it into our breadboard, and wire it according to the diagram.
 
+![a fritzing diagram of a potentiometer added to the previous circuit](assets/potentiometer.jpg)
 
 ![an image of a potentiometer wired into the circuit](assets/pot_led_on.jpg)
 
@@ -152,7 +159,7 @@ If this is wired correctly, we should be able to adjust the brightness of our LE
 **Capacitors**: these store energy while it’s coming in, and then release it when incoming energy stops. These are super useful for making sure something that requires a very specific electrical supply receives it, as many power supplies tend to have dips and spikes in their current.
 
 
-There’s not a great use for a capacitor in this circuit, but we’ll demo how it might be used here.
+There’s not a great use for a capacitor in this circuit, but we’ll demo how it might be used live.
 
 
 For more components, and their uses, you can check out [ITP’s components lab](https://itp.nyu.edu/physcomp/labs/labs-electronics/components/).
