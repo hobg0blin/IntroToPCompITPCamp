@@ -259,8 +259,9 @@ If you don't see port listed, try this:
 ### Blinking an LED
 
 1. Open up the app and click **File > Examples > 01Basics > Blink**
-2. Connect **Pin 13** to the positive side of your LED circuit, and **GND Pin** to the ground.
-![Diagram of Arduino with an LED on pin 13](assets/arduino-blink);
+2. Connect **Pin 9** to the positive side of your LED circuit, and **GND Pin** to the ground.
+3. Change the code so that we blink on pin 9
+![Diagram of Arduino with an LED on pin 9](assets/arduino-blink.jpg);
 
 ---
 
