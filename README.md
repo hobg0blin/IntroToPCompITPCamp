@@ -224,13 +224,15 @@ So far we've only used the Arduino as a power source, we have not accessed its u
 	- **PWM (~):** A way to fake analog;
 
 #### A Note On Power
-The Arduino max rating is 40mA per pin, so what if you want to control a motor that draws 200mA? or 500mA? Controlling high current loads is outside the scope of this workshop, but there are many ways to do it. Here are some of the common ways if you'd like to delve deeper:
+The Arduino max rating is 40mA per pin, so what if you want to control a motor that draws 200mA? or 500mA? Controlling high current loads is outside the scope of this workshop, but there are many ways to do it. Below are some of the common ways if you'd like to delve deeper. 
 
 - **Transistors,** which sort of act as electronic switches. Give a transistor a small current and it turns on a high current circuit.
 - **Motor Drivers.** Essentially a motor driver is a fancy switch that controls your motor. Instead of manually controlling the switch, you plug it into your Arduino. Among other things they can be:
  	- super cheap [single chips](https://www.pololu.com/product/24), 
  	- [Arduino-compatible shields](https://www.adafruit.com/product/1438?gclid=EAIaIQobChMI27L7ycXn4gIVWuDICh0fDQ0NEAQYASABEgLisvD_BwE),
  	- [expensive and robust circuits](https://motorsandcontrol.com/bodine-electric-0786-012-0-14-vdc-167-hp-chassis-dc-drive/?utm_source=google_shopping&keyword=&gclid=EAIaIQobChMIupSc38Tn4gIVjlcNCh2cUAI-EAQYASABEgIPFPD_BwE).
+
+ Read through the [ITP Guide to Controlling High Current with an Arduino](https://itp.nyu.edu/physcomp/labs/motors-and-transistors/using-a-transistor-to-control-high-current-loads-with-an-arduino/) for more information!
 
 
 ### Setting Things Up
@@ -242,10 +244,13 @@ The Arduino max rating is 40mA per pin, so what if you want to control a motor t
 	- On a Windows with will look like *COMXX*
 	- On a Mac, this will look like "/dev/tty.usbserial-XXXXXXXX"
 
+![A screenshot of the Arduino IDE with the board menu open](assets/arduino-ide-board.png)
+![A screenshot of the Arduino IDE with the port menu open](assets/arduino-ide-port.png)
+
 #### Potential Frictions\*
 If you don't see port listed, try this:
 
-1. Since Arduino is open source, there are many derivations of the board. The genuine Arduino should register on your computer, but if you have a different board you may need to install drivers for that board.
+1. Since Arduino is open source, there are many derivations of the board. The genuine Arduino should register on your computer, but if you have a different board you may need to install drivers for that board. A common board/driver combo is [Sparkfun redboards with FTDI drivers](https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers)
 2. Unplug and replug.
 
 
@@ -253,6 +258,7 @@ If you don't see port listed, try this:
 
 1. Open up the app and click **File > Examples > 01Basics > Blink**
 2. Connect **Pin 13** to the positive side of your LED circuit, and **GND Pin** to the ground.
+![Diagram of Arduino with an LED on pin 13](assets/arduino-blink);
 
 ---
 
@@ -265,5 +271,6 @@ If you don't see port listed, try this:
 ### Safety Tips for Your Stuff
 1. Pay attention to the Datasheets. You will find all sorts of useful information about max current, min/max voltage. Knowing these will help you avoid turning your circuits into blue smoke. 
 2. Avoid food or water around electronics. 
+3. Don't operate on live circuits. **Unplug your power supply!**
 
 
