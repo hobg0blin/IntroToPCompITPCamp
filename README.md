@@ -90,10 +90,14 @@ An **LED** (light-emitting diode) is a special type of diode that emits light wh
 ![LED polarity showing short leg as the cathode](assets/led-polarity.png)
 
 An LED is one of the simplest and most common types of **actuators**: the components that turn our electrical energy into some other form of energy. In this case, it’s turning it into light.
+
+
+Now that we know how current flows through an LED, and through a breadboard, let’s try making the simplest circuit possible: put the short leg of your LED into the blue rail on your breadboard (remember to always ground your component first!), then the long leg into the red rail.
+
 ![a fritzing diagram of an LED plugged into the power rails on a breadboard](assets/kill_led_bb.jpg)
 
 ![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.jpg)
-Now that we know how current flows through an LED, and through a breadboard, let’s try making the simplest circuit possible: put the short leg of your LED into the blue rail on your breadboard (remember to always ground your component first!), then the long leg into the red rail.
+
 
 If we did this right, congrats! You just burned out your first LED. Why did this happen?
 
@@ -106,6 +110,8 @@ To make sure our LED gets the right current, we’ll add a component called a **
 ![a chart for calculating resistance value by color](assets/resistor-color-chart.png)
 
 **SIDE NOTE:** *If you forget the resistor codes or don't have internet to check the handy chart, you can [use your multimeter to measure resistance](https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/measuring-resistance) as well! For example, here’s me measuring a 220 ohm resistor: *
+
+
 ![a multimeter measuring a resistor that reads 217.5 ohms](assets/resistor_current.jpg)
 
 For most LEDs, a resistor between 220 and 1K ohms will do the job, so we’ll use a 220 ohm resistor for maximum brightness (to decrease brightness, we can use a higher-ohm resistor).
@@ -125,6 +131,7 @@ Now, we’re going to add a pushbutton to our circuit. Pushbuttons (and switches
 
 Basically, we want to run our power supply through one side of the pushbutton, then continue it on to the LED on the other side.
 ![a fritzing diagram of the previous circuit with a pushbutton added](assets/pushbutton.jpg)
+
 ![a pushbutton wired to the previous circuit](assets/button.jpg)
 
 If we’ve wired this correctly, we should be able to turn our LED on and off.
