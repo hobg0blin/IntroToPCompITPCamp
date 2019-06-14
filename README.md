@@ -84,6 +84,9 @@ An LED is one of the simplest and most common types of **actuators**: the compon
 ![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.jpg)
 Now that we know how current flows through an LED, and through a breadboard, let’s try making the simplest circuit possible: put the short leg of your LED into the blue rail on your breadboard (remember to always ground your component first!), then the long leg into the red rail.
 
+**SIDE NOTE:** If your LED has equal sized legs, look for a flat section on the rim. That side should point to ground.
+![LED polarity showing short leg as the cathode](assets/led-polarity.png) 
+
 If we did this right, congrats! You just burned out your first LED. Why did this happen?
 
 Current! The standard LEDs we’re using aren’t designed to function with the output current of an Arduino - they need a lower current to function without burning out. So now, we need to find a way to reduce our current so that our LEDs don’t burn.
