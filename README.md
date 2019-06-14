@@ -16,11 +16,13 @@ In the context of this brief introduction, we’ll be covering some basic concep
 
 **Electricity** is the flow of electrical energy through conductive materials. Electrical circuits - the basic objects you’re working with in any form of physical computing - are the combination of a power source, which provides electricity, and components that convert that energy into other forms, like visual output on a screen, or a motor turning.
 
-**Voltage** is a measure of the difference in electrical potential energy between two points in a circuit - we can think of it as kind of a measure of the raw energy available. It’s measured in Volts.
+- **Voltage** is a measure of the difference in electrical potential energy between two points in a circuit-  we can think of it as kind of a measure of the raw energy available. It’s measured in Volts.
+	- An important thing for us to remember is that the voltage across our circuit is determined by the power supply (e.g. an Arduino provides 5V). We need to use components that can handle that.
 
-**Current** is a measure of the rate at which electrical energy is flowing. It’s measured in Amperes, or Amps.
+- **Current** is a measure of the rate at which electrical energy is flowing. It’s measured in Amperes, or Amps. 
+	- An important thing for us to remember is that components will try to *draw* as much current as they can, and different power supplies can deliver only so much current. Bigger current components require bigger power supplies.
 
-**Resistance** is a measure of a material’s ability to resist the flow of current. It’s measured in Ohms. Every object has some degree of resistance, but when we’re building circuits, we generally use materials that are super-low resistance, like copper wire, to carry the current through it.
+- **Resistance** is a measure of a material’s ability to resist the flow of current. It’s measured in Ohms. Every object has some degree of resistance, but when we’re building circuits, we generally use materials that are super-low resistance, like copper wire, to carry the current through it.
 
 In the context of a circuit, our electrical energy begins and ends at a power supply, which usually has two ends: **Power** and **Ground**. Power is where our voltage and current come from, and ground is where it ends. Electrical current is kind of like a waterfall: it flows from places of high potential energy to low potential energy. We can think of our voltage as the height of the waterfall, current as the amount of water flowing through it, and resistance as anything that might get in the way of that flow. In this analogy, the Ground is, well, the ground. The Ground is the place in a circuit where the potential energy of the electrons is zero: it provides a safe path for the electricity to flow to. It’s also a reference point without which we cannot measure voltage and current correctly - since voltage is the potential energy between two points, at some point we need a zero-voltage point to measure our beginning voltage correctly.  In a low-voltage system like an Arduino or a battery, it’s usually part of the power supply, but its name comes from higher-voltage systems where the ground is often the actual earth itself.
 
@@ -40,6 +42,8 @@ Plug a black wire into the hole on your Arduino that says `GND`, and a red wire 
 
 If you have alligator clips, clip them between the red and black wires on the Arduino and the red and black wires on the multimeter. The black wire to the multimeter should be plugged into the COM port, and the red wire should be plugged into the port on the right - the other port is for super high current measurements, which we won’t be doing today.
 
+**SIDE NOTE:** *Conventionally red is used to indicate a 5V line from power, and black is used to indicate a wire going to ground. We will stick to this convention.*
+
 ![a multimeter showing 5.13 volts](assets/multimeter_arduino_voltage.jpg)
 
 First, turn your multimeter to the “V” symbol. We should get an output around 5 volts, since we’re attached to the 5V port.
@@ -50,7 +54,9 @@ Now, turn your multimeter to the “A” symbol. We should get an output around 
 
 You can plug your multimeter in at just about any point in a circuit (making sure to put your power cable closer to the power source) to determine the voltage and current available at those points. This is an easy way to debug why something might not be working: if it’s not getting any voltage or current, that’s probably why!
 
-To get more familiar witha multimeter and some of the rules around electronics, you can check out [ITP’s Electronics Lab](https://itp.nyu.edu/physcomp/labs/labs-electronics/electronics/).
+**SIDE NOTE:** *This is the simplest form of measurement; measuring across an open power supply. When you measure different sections of your circuit the processes for measuring voltage and current are slightly different, so be sure to familiarise yourself with the differences below.*
+
+To get more familiar with a multimeter and some of the rules around electronics, you can check out [ITP’s Electronics Lab](https://itp.nyu.edu/physcomp/labs/labs-electronics/electronics/).
 
 ## Simple Circuits
 
@@ -66,10 +72,7 @@ The two large pieces of wire are usually called **power rails**: this is where w
 
 Let’s connect the ground wire (the black wire connected to GND on the Arduino) to one of the blue rails on the side of our breadboard, then connect power (the red wire connected to 5V).
 
-**SIDE NOTE:** When we’re working with a circuit, we **always** want to make sure any components involved in it are connected to ground before we connect them to power. If we connect something to power without it being grounded, it can often cause damage to a part since the power going into it has nowhere to flow.
-
-**OTHER SIDE NOTE:** When adding or removing components from a breadboard, always unplug your power supply first!
-
+**IMPORTANT SIDE NOTE:** *When adding or removing components from a breadboard, always **unplug your power supply first**!*
 
 ### Adding an LED
 
@@ -79,13 +82,13 @@ An LED is a type of diode: a component that is **polarized**: this means it allo
 ![a picture of an LED](assets/led.jpg)
 An **LED** (light-emitting diode) is a special type of diode that emits light when current flows through it: with LEDs, you can generally tell which side current flows through by the length of its legs: the longer leg is the one the power should enter, and the shorter is the one it should leave.
 
+**SIDE NOTE:** If your LED has equal sized legs, look for a flat section on the rim. That side should point to ground.
+![LED polarity showing short leg as the cathode](assets/led-polarity.png) 
+
 An LED is one of the simplest and most common types of **actuators**: the components that turn our electrical energy into some other form of energy. In this case, it’s turning it into light.
 
 ![an LED plugged into the blue and red rails on a breadboard](assets/simplest_possible_circuit.jpg)
 Now that we know how current flows through an LED, and through a breadboard, let’s try making the simplest circuit possible: put the short leg of your LED into the blue rail on your breadboard (remember to always ground your component first!), then the long leg into the red rail.
-
-**SIDE NOTE:** If your LED has equal sized legs, look for a flat section on the rim. That side should point to ground.
-![LED polarity showing short leg as the cathode](assets/led-polarity.png) 
 
 If we did this right, congrats! You just burned out your first LED. Why did this happen?
 
@@ -97,6 +100,7 @@ To make sure our LED gets the right current, we’ll add a component called a **
 
 ![a chart for calculating resistance value by color](assets/resistor-color-chart.png)
 
+**SIDE NOTE:** *If you forget the resistor codes or don't have internet to check the handy chart, you can [use your multimeter to measure resistance](https://learn.sparkfun.com/tutorials/how-to-use-a-multimeter/measuring-resistance) as well!*
 
 For most LEDs, a resistor between 220 and 1K ohms will do the job, so we’ll use a 220 ohm resistor for maximum brightness (to decrease brightness, we can use a higher-ohm resistor).
 
